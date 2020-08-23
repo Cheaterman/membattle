@@ -323,6 +323,11 @@ class IncrediblyCrudeClock(Label):
 
 
 class PuzzleWindow(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.last_revealed_cards = []
+        self.reset_event = None
+
     def on_enter(self):
         pictures = get_random_animal_pairs(4*4)
 
@@ -330,22 +335,60 @@ class PuzzleWindow(Screen):
             self.ids.puzz.ids.puzzG.children,
             pictures,
         )):
-            edited_puzzle_2.trigger_action(2)
-            edited_puzzle_2.image = str(image)
+            edited_puzzle_2.side = 'front'
+            edited_puzzle_2.hidden_image = str(image)
             edited_puzzle_2.text = str(index)  # ???
             edited_puzzle_2.color = (1, 0, 0, 1)
             edited_puzzle_2.bind(on_press=self.on_press)
 
+        Clock.schedule_once(self.hide_cards, 2)
+
+    def hide_cards(self, *args):
+        for edited_puzzle_2 in self.ids.puzz.ids.puzzG.children:
+            edited_puzzle_2.side = 'back'
+
     def on_leave(self):
         for edited_puzzle_2 in self.ids.puzz.ids.puzzG.children:
-            edited_puzzle_2.trigger_action()
+            edited_puzzle_2.side = 'back'
 
         self.ids.puzz.ids.resign.children[0].trigger_action()
         self.ids.puzz.ids.finish.children[0].trigger_action()
 
     def on_press(self, button):
-        button.image = 'data/images/card.jpg'
-        button.back_color = (1, 0, 1, 1)
+        if button.side == 'front':
+            # Don't select the same card twice.
+            return
+
+        if self.reset_event:
+            # Don't reveal more than two cards at once.
+            return
+
+        self.last_revealed_cards.append(button)
+        button.side = 'front'
+
+        if len(self.last_revealed_cards) == 1:
+            # Can't compare card with itself.
+            return
+
+        last_revealed_card = self.last_revealed_cards[0]
+
+        if button.hidden_image != last_revealed_card.hidden_image:
+            # Wrong guess!
+            self.reset_event = Clock.schedule_once(
+                self.reset_revealed_cards,
+                1
+            )
+            return
+
+        # Success!
+        self.last_revealed_cards = []
+
+    def reset_revealed_cards(self, *args):
+        for button in self.last_revealed_cards:
+            button.side = 'back'
+
+        self.last_revealed_cards = []
+        self.reset_event = None
 
 
 class PuzzleWindowComp(Screen):

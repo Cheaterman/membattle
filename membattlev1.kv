@@ -759,107 +759,24 @@ WindowMan:
             size: root.size
             cols: 4
             rows: 4
+
             EditedPuzzle2:
-                id: pone
-                size_hint: 1,1.1
-#                    self.text = "maj"
-#                    self.back_color = (0.7,0.5,0.5,1)
-#                    self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                id: ptwo
-                size_hint: 1,1.1
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                id: pthree
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                id: plast
-                size_hint: 1,1.1
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release:
-                    self.a = "C:/Users/Maj/Desktop/markF.jpg"
-                    self.back_color = (1,1,1,1)
+
         GridLayout:
             padding: 30,35,30,0
             size_hint: 0.2,0.3
@@ -1103,20 +1020,24 @@ WindowMan:
             width: 1.7
 
 <EditedPuzzle2@Button>
-    image: "C:/Users/Maj/Desktop/markF.jpg"
-    background_color: (0,0,0,0)
+    side: 'back'
+    back_image: 'data/images/card.jpg'
+    hidden_image: ''
+    background_color: (0, 0, 0, 0)
     background_normal: ''
-    back_color: (1,1,1,1)
+    back_color: (1, 1, 1, 1) if self.state == 'normal' else (0.7, 0.5, 0.5, 1)
     color: self.back_color
     bold: True
+    size_hint: 1, 1.1
+
     canvas.before:
         Color:
-            rgba: self.back_color
+            rgba: self.back_color if self.back_color else (0, 0, 0, 0)
         RoundedRectangle:
             pos: self.pos
             size: self.size
-            source: self.image
-            radius: [14,]
+            source: self.back_image if self.side == 'back' else self.hidden_image
+            radius: [14]
 
 
 <EditedButton@Button>
