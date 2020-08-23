@@ -47,11 +47,11 @@ WindowMan:
         size: root.width, root.height
         anchor_x: 'center'
         anchor_y: 'top'
-        padding: [5,5,5,5]
+        padding: [5, 5, 5, 5]
         AboutLable:
-            size_hint: 1,0.2
+            size_hint: 1, 0.2
             text: 'Seconds until game starts'
-            color: 0,0,0,1
+            color: 0, 0, 0, 1
         BoxLayout:
             id: hello
 
@@ -61,11 +61,11 @@ WindowMan:
         size: root.width, root.height
         anchor_x: 'center'
         anchor_y: 'top'
-        padding: [5,5,5,5]
+        padding: [5, 5, 5, 5]
         AboutLable:
-            size_hint: 1,0.2
+            size_hint: 1, 0.2
             text: 'Seconds until game starts'
-            color: 0,0,0,1
+            color: 0, 0, 0, 1
         BoxLayout:
             id: helloC
 
@@ -83,7 +83,7 @@ WindowMan:
 
 <MyGrid>
     AnchorLayout:
-        size: root.width,root.height
+        size: root.width, root.height
         anchor_y: "top"
         anchor_x: "right"
         EditedButton:
@@ -91,13 +91,13 @@ WindowMan:
             text: "Log in"
             bold: True
             font_size: 16
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "third"
                 app.root.transition.direction = 'left'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
     AnchorLayout:
-        size: root.width,root.height
+        size: root.width, root.height
         anchor_y: "top"
         anchor_x: "left"
         EditedButton:
@@ -105,48 +105,48 @@ WindowMan:
             text: "Sign Up"
             bold: True
             font_size: 16
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "second"
                 app.root.transition.direction = 'left'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
     GridLayout:
-        size: root.width-80,root.height-120
-        pos: 40,50
+        size: root.width - 80, root.height - 120
+        pos: 40, 50
         cols: 1
         rows: 6
-        background_color: 1,1,0.2,1
+        background_color: 1, 1, 0.2, 1
         spacing: 10
         EditedButton1:
             text: "Practice"
-            color: 0.2,0.9,0.9,1
+            color: 0.2, 0.9, 0.9, 1
             font_size: 22
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "startsc"
                 app.root.transition.direction = 'left'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
         EditedButton1:
             id: compBtn
             text: "Competative"
             font_size: 22
             on_press:
-                self.back_color=(0.5,0,0,0.4)
+                self.back_color = (0.5, 0, 0, 0.4)
                 root.CompBtn()
         EditedButton1:
-            back_color: (0.2,0.9,0.9,1)
+            back_color: (0.2, 0.9, 0.9, 1)
             font_size: 22
             text: "Rulles"
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "rullsw"
                 app.root.transition.direction = 'left'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 <MyGridS@Widget>
     AnchorLayout:
-        size: root.width,root.height
-        padding: [30,20,30,60]
+        size: root.width, root.height
+        padding: [30, 20, 30, 60]
         anchor_y: "top"
         anchor_x: "center"
         GridLayout:
@@ -155,8 +155,8 @@ WindowMan:
             LogInBLable:
                 text: "Sign up form"
                 font_size: 22
-                size_hint: 1,0.5
-                color: 0,0,0,1
+                size_hint: 1, 0.5
+                color: 0, 0, 0, 1
             GridLayout:
                 spacing: 3
                 cols: 2
@@ -164,7 +164,7 @@ WindowMan:
                 LogInBLable:
                     font_size: 12
                     text: "Username:"
-                    color: 0,0,0,1
+                    color: 0, 0, 0, 1
                     bold: True
                 TextInput:
                     id: user_2
@@ -174,7 +174,7 @@ WindowMan:
                 LogInBLable:
                     font_size: 12
                     text: "Password:"
-                    color: 0,0,0,1
+                    color: 0, 0, 0, 1
                     bold: True
                 TextInput:
                     id: pass_2
@@ -183,30 +183,30 @@ WindowMan:
                     multiline: False
             EditedButton1:
                 font_size: 30
-                size_hint: 0.9,0.9
+                size_hint: 0.9, 0.9
                 text: "Submit"
-                color: 0.2,0.9,0.9,1
+                color: 0.2, 0.9, 0.9, 1
                 bold: True
                 on_press:
-                    self.back_color=(0,0,0,1)
+                    self.back_color = (0, 0, 0, 1)
                     root.DBsend(user_2, pass_2)
                     root.clear_inputs([user_2, pass_2])
                 on_release:
 #                    app.root.current = "main"
 #                    app.root.transition.direction = 'left'
-                    self.back_color=(0.2,0.9,0.9,1)
+                    self.back_color = (0.2, 0.9, 0.9, 1)
             GridLayout:
-                size_hint: 1,0.2
+                size_hint: 1, 0.2
                 cols: 1
                 Button:
-                    background_color: 0,0,0,0
-                    color: 0.2,0.4,0.6,1
+                    background_color: 0, 0, 0, 0
+                    color: 0.2, 0.4, 0.6, 1
                     font_size: 10
                     text: 'Already signed up?'
                     on_press:
-                        self.color=(0,0,0,1)
+                        self.color = (0, 0, 0, 1)
                     on_release:
-                        self.color=(0.2,0.4,0.6,1)
+                        self.color = (0.2, 0.4, 0.6, 1)
                         app.root.current= "third"
                         app.root.transition.direction = 'left'
 
@@ -214,59 +214,59 @@ WindowMan:
         anchor_y: "bottom"
         anchor_x: "left"
         EditedButton:
-            size_hint: .65,.22
+            size_hint: .65, .22
             text: "Back"
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "main"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 <MyGridLog@Widget>
     AnchorLayout:
-        size: root.width,root.height
+        size: root.width, root.height
         anchor_y: "top"
         anchor_x: "center"
         Label:
             id: logedin
             size_hint: .3, .06
             bold: True
-            color: (0.2,0.2,1,1)
+            color: (0.2, 0.2, 1, 1)
             font_size: 14
     GridLayout:
-        size: root.width-80,root.height-120
-        pos: 40,50
+        size: root.width - 80, root.height - 120
+        pos: 40, 50
         cols: 1
         rows: 6
-        background_color: 1,1,0.2,1
+        background_color: 1, 1, 0.2, 1
         spacing: 10
         EditedButton1:
             text: "Practice"
-            color: 0.2,0.9,0.9,1
+            color: 0.2, 0.9, 0.9, 1
             font_size: 22
             on_press:
-                self.back_color=(0.5,0,0,0.4)
+                self.back_color = (0.5, 0, 0, 0.4)
                 root.CompBtn()
         EditedButton1:
             text: "Competative"
             font_size: 22
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "select"
                 app.root.transition.direction = 'left'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
         EditedButton1:
-            back_color: (0.2,0.9,0.9,1)
+            back_color: (0.2, 0.9, 0.9, 1)
             font_size: 22
             text: "Rulles"
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "rullswlog"
                 app.root.transition.direction = 'left'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
     AnchorLayout:
-        size: root.width,root.height
+        size: root.width, root.height
         anchor_y: "bottom"
         anchor_x: "center"
         EditedButton:
@@ -275,16 +275,16 @@ WindowMan:
             bold: True
             font_size: 16
             on_press:
-                self.back_color=(0.5,0,0,0.4)
+                self.back_color = (0.5, 0, 0, 0.4)
             on_release:
                 app.root.current = "main"
                 app.root.transition.direction = 'left'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 <MyGridT>
     AnchorLayout:
         size: root.size
-        padding: [30,20,30,80]
+        padding: [30, 20, 30, 80]
         anchor_y: "center"
         anchor_x: "center"
         GridLayout:
@@ -293,8 +293,8 @@ WindowMan:
             LogInBLable:
                 text: "Log In"
                 font_size: 22
-                size_hint: 1,0.7
-                color: 0,0,0,1
+                size_hint: 1, 0.7
+                color: 0, 0, 0, 1
             GridLayout:
                 spacing: 3
                 cols: 2
@@ -302,7 +302,7 @@ WindowMan:
                 LogInBLable:
                     font_size: 12
                     text: "Username:"
-                    color: 0,0,0,1
+                    color: 0, 0, 0, 1
                     bold: True
                 TextInput:
                     id: user_1
@@ -312,7 +312,7 @@ WindowMan:
                 LogInBLable:
                     font_size: 12
                     text: "Password:"
-                    color: 0,0,0,1
+                    color: 0, 0, 0, 1
                     bold: True
                 TextInput:
                     id: pass_1
@@ -322,42 +322,42 @@ WindowMan:
                     password: True
             EditedButton1:
                 font_size: 30
-                size_hint: 0.9,0.9
+                size_hint: 0.9, 0.9
                 text: "Submit"
-                color: 0.2,0.9,0.9,1
+                color: 0.2, 0.9, 0.9, 1
                 bold: True
                 on_press:
-                    self.back_color=(0,0,0,1)
+                    self.back_color = (0, 0, 0, 1)
                     root.DBrecieve(user_1, pass_1)
                     root.clear_inputs([pass_1, user_1])
 
                 on_release:
 #                    app.root.current = "main"
 #                    app.root.transition.direction = 'left'
-                    self.back_color=(0.2,0.9,0.9,1)
+                    self.back_color = (0.2, 0.9, 0.9, 1)
             GridLayout:
                 rows: 2
-                size_hint: 0.6,0.5
+                size_hint: 0.6, 0.5
                 Button:
-                    background_color: 0,0,0,0
-                    color: 0.2,0.4,0.6,1
+                    background_color: 0, 0, 0, 0
+                    color: 0.2, 0.4, 0.6, 1
                     font_size: 10
                     text: 'Forgot password?'
                     on_press:
-                        self.color=(0,0,0,1)
+                        self.color = (0, 0, 0, 1)
                     on_release:
                         app.root.current = "forgotsc"
                         app.root.transition.direction = 'left'
-                        self.color=(0.2,0.4,0.6,1)
+                        self.color = (0.2, 0.4, 0.6, 1)
                 Button:
-                    background_color: 0,0,0,0
-                    color: 0.2,0.4,0.6,1
+                    background_color: 0, 0, 0, 0
+                    color: 0.2, 0.4, 0.6, 1
                     font_size: 10
                     text: 'Not signed up yet?'
                     on_press:
-                        self.color=(0,0,0,1)
+                        self.color = (0, 0, 0, 1)
                     on_release:
-                        self.color=(0.2,0.4,0.6,1)
+                        self.color = (0.2, 0.4, 0.6, 1)
                         app.root.transition.direction = 'right'
                         app.root.current = 'second'
 
@@ -365,24 +365,24 @@ WindowMan:
         anchor_y: "bottom"
         anchor_x: "left"
         EditedButton:
-            size_hint: .65,.22
+            size_hint: .65, .22
             text: "Back"
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "main"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 <RullesGrid@Widget>
     BoxLayout:
         size: root.size
-        padding: [10,10,10,30]
+        padding: [10, 10, 10, 30]
         orientation: 'vertical'
         spacing: 3
         AboutLable:
-            size_hint: 1,0.2
-            color: 0,0,0,1
+            size_hint: 1, 0.2
+            color: 0, 0, 0, 1
             font_size: 16
             text: "About Memory battle"
         AboutLable1:
@@ -390,19 +390,19 @@ WindowMan:
             valign: 'top'
             halign: 'center'
             pos_hint: {'x': 0.01, 'y': 0}
-            size_hint: 0.98,0.65
-            color: 0,0,0,1
+            size_hint: 0.98, 0.65
+            color: 0, 0, 0, 1
             font_size: 9
             text: "Memory battle is a mobile game that can be played with your friends. The person who collects most points wins the game.Your best scores will be uploaded to the website so you can check your game history. Game allows a practice mode so you can improve your skills"
         AboutLable:
-            size_hint: 1,0.18
-            color: 0,0,0,1
+            size_hint: 1, 0.18
+            color: 0, 0, 0, 1
             font_size: 16
             text: 'How to play ?'
         AboutLable1:
             pos_hint: {'x': 0.01, 'y': 0}
-            size_hint: 0.98,1.1
-            color: 0,0,0,1
+            size_hint: 0.98, 1.1
+            color: 0, 0, 0, 1
             text_size: self.size
             valign: 'top'
             halign: 'center'
@@ -410,28 +410,28 @@ WindowMan:
             text: "The game allowes 4x4 and 6x6 fields of memory pussels that you have to uncover in pairs. When selecting the number of players and puzzle object type you are ready to play. The profile owner always starts first. Because we have different memory types users can select and upload their own pusless on the webside. Points are granted for correct pair and taken for failed attemts. Extra point is granded for a faster time between players when players points are tied."
     AnchorLayout:
         size: root.size
-        padding: [50,10,50,0]
+        padding: [50, 10, 50, 0]
         anchor_y: "bottom"
         anchor_x: "center"
         EditedButton:
-            size_hint: .5,.07
+            size_hint: .5, .07
             text: "Back"
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "main"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 <RullesGrid1@Widget>
     BoxLayout:
         size: root.size
-        padding: [10,10,10,30]
+        padding: [10, 10, 10, 30]
         orientation: 'vertical'
         spacing: 3
         AboutLable:
-            size_hint: 1,0.2
-            color: 0,0,0,1
+            size_hint: 1, 0.2
+            color: 0, 0, 0, 1
             font_size: 16
             text: "About Memory battle"
         AboutLable1:
@@ -439,19 +439,19 @@ WindowMan:
             valign: 'top'
             halign: 'center'
             pos_hint: {'x': 0.01, 'y': 0}
-            size_hint: 0.98,0.65
-            color: 0,0,0,1
+            size_hint: 0.98, 0.65
+            color: 0, 0, 0, 1
             font_size: 9
             text: "Memory battle is a mobile game that can be played with your friends. The person who collects most points wins the game.Your best scores will be uploaded to the website so you can check your game history. Game allows a practice mode so you can improve your skills"
         AboutLable:
-            size_hint: 1,0.18
-            color: 0,0,0,1
+            size_hint: 1, 0.18
+            color: 0, 0, 0, 1
             font_size: 16
             text: 'How to play ?'
         AboutLable1:
             pos_hint: {'x': 0.01, 'y': 0}
-            size_hint: 0.98,1.1
-            color: 0,0,0,1
+            size_hint: 0.98, 1.1
+            color: 0, 0, 0, 1
             text_size: self.size
             valign: 'top'
             halign: 'center'
@@ -459,55 +459,55 @@ WindowMan:
             text: "The game allowes 4x4 and 6x6 fields of memory pussels that you have to uncover in pairs. When selecting the number of players and puzzle object type you are ready to play. The profile owner always starts first. Because we have different memory types users can select and upload their own pusless on the webside. Points are granted for correct pair and taken for failed attemts. Extra point is granded for a faster time between players when players points are tied."
     AnchorLayout:
         size: root.size
-        padding: [50,10,50,0]
+        padding: [50, 10, 50, 0]
         anchor_y: "bottom"
         anchor_x: "center"
         EditedButton:
-            size_hint: .5,.07
+            size_hint: .5, .07
             text: "Back"
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "mainlogin"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 
 <ForgotPass>
     AnchorLayout:
         size: root.size
-        padding: [30,20,30,80]
+        padding: [30, 20, 30, 80]
         anchor_y: "center"
         anchor_x: "center"
 #        GridLayout:
 #            cols: 1
-#            size: root.width,root.height
+#            size: root.width, root.height
 #            AboutLable1:
-#                size_hint: 1,0.5
+#                size_hint: 1, 0.5
 #                text_size: self.size
 #                font_size: 14
 #                valign: 'top'
 #                halign: 'center'
 #                pos_hint: {'x': 0.01, 'y': 0}
 #                text: 'Email has been sent.\n \n Check your email for conformation code.'
-#                color: 0,0,0,1
+#                color: 0, 0, 0, 1
         GridLayout:
             id: jam
             cols: 1
             spacing: 2
             AboutLable1:
-                size_hint: 1,1.1
+                size_hint: 1, 1.1
                 text_size: self.size
                 font_size: 10
                 valign: 'top'
                 halign: 'center'
                 pos_hint: {'x': 0.01, 'y': 1}
                 text: 'To recive Email conformation code first press send code'
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
             LogInBLable:
                 font_size: 12
                 text: "Email conformation code:"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
                 bold: True
             TextInput:
                 id: email_2
@@ -517,7 +517,7 @@ WindowMan:
             LogInBLable:
                 font_size: 12
                 text: "New password:"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
                 bold: True
             TextInput:
                 id: pass_3
@@ -527,60 +527,60 @@ WindowMan:
                 multiline: False
                 password: True
             EditedButton1:
-                size_hint: 1,1.5
+                size_hint: 1, 1.5
                 font_size: 19
                 text: "Submit"
-                color: 0.2,0.9,0.9,1
+                color: 0.2, 0.9, 0.9, 1
                 bold: True
-                on_press: self.back_color=(0,0,0,1)
+                on_press: self.back_color = (0, 0, 0, 1)
                 on_press: root.clear_inputs([pass_3, email_2])
                 on_release:
 #                    app.root.current = "third"
 #                    app.root.transition.direction = 'left'
-                    self.back_color=(0.2,0.9,0.9,1)
+                    self.back_color = (0.2, 0.9, 0.9, 1)
             Button:
                 id: send
-                background_color: 0,0,0,0
-                color: 0.2,0.4,0.6,1
+                background_color: 0, 0, 0, 0
+                color: 0.2, 0.4, 0.6, 1
                 font_size: 14
                 text: 'Send code'
                 on_press:
                     root.btn()
-                    self.color=(0,0,0,1)
+                    self.color = (0, 0, 0, 1)
 #                    root.r_widget()
                     root.callback()
                 on_release:
-                    self.color=(0,1,0,1)
+                    self.color = (0, 1, 0, 1)
                      #dejnsko klices root.btn()
 #            Label:
 #                id: my_label
 #                text: ''
-#                color: 0,0,0,1
+#                color: 0, 0, 0, 1
 
 #            Button:
-#                size_hint: 1,0.2
-#                background_color: 0,0,0,0
-#                color: 0.2,0.4,0.6,1
+#                size_hint: 1, 0.2
+#                background_color: 0, 0, 0, 0
+#                color: 0.2, 0.4, 0.6, 1
 #                font_size: 14
 #                text: 'Resend code'
 #                on_press:
-#                    self.color=(0,0,0,1)
+#                    self.color = (0, 0, 0, 1)
 #                on_release:
-#                    self.color=(0.2,0.4,0.6,1)
+#                    self.color = (0.2, 0.4, 0.6, 1)
     AnchorLayout:
         size: root.size
-        padding: [50,10,50,0]
+        padding: [50, 10, 50, 0]
         anchor_y: "bottom"
         anchor_x: "center"
         EditedButton:
-            size_hint: .5,.07
+            size_hint: .5, .07
             text: "Back"
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "third"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 
 
@@ -605,157 +605,157 @@ WindowMan:
             anchor_x: "center"
             anchor_y: "top"
             AboutLable1:
-                size_hint: 1,0.06
-                color: 0,0,0,1
+                size_hint: 1, 0.06
+                color: 0, 0, 0, 1
                 text: "CONSTRUCT YOUR GAME"
                 font_size: 12
     GridLayout:
-        size: root.width,root.height-40
+        size: root.width, root.height - 40
         cols: 1
-        padding: [5,5,5,40]
+        padding: [5, 5, 5, 40]
         AboutLable:
-            size_hint: 0.1,0.08
-            color: 0,0,0,1
+            size_hint: 0.1, 0.08
+            color: 0, 0, 0, 1
             text: "Number of players:"
             font_size: 12
         GridLayout:
             size: root.size
-            size_hint: 0.5,0.4
-            padding: [10,10,10,10]
-            color: 0,0,0,1
+            size_hint: 0.5, 0.4
+            padding: [10, 10, 10, 10]
+            color: 0, 0, 0, 1
             cols: 2
             rows: 3
             spacing: 5
             AboutLable2:
-                size_hint: 0.5,0.36
+                size_hint: 0.5, 0.36
                 font_size: 10
                 text: "2 players"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
             CustomCheckBox:
                 active: False
                 group: 'prva'
             AboutLable2:
-                size_hint: 0.5,0.36
+                size_hint: 0.5, 0.36
                 font_size: 11
                 text: "3 players"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
             CustomCheckBox:
                 group: 'prva'
                 font_size: 11
                 active: False
             AboutLable2:
                 text: "4 players"
-                color: 0,0,0,1
-                size_hint: 0.5,0.36
+                color: 0, 0, 0, 1
+                size_hint: 0.5, 0.36
                 font_size: 11
             CustomCheckBox:
                 group: 'prva'
                 active: False
         AboutLable:
-            size_hint: 0.1,0.08
-            color: 0,0,0,1
+            size_hint: 0.1, 0.08
+            color: 0, 0, 0, 1
             text: "Difficulty"
             font_size: 12
         GridLayout:
             cols: 2
             rows: 2
             size: root.size
-            size_hint: 0.5,0.3
-            padding: [10,10,10,10]
-            color: 0,0,0,1
+            size_hint: 0.5, 0.3
+            padding: [10, 10, 10, 10]
+            color: 0, 0, 0, 1
             spacing: 5
             AboutLable2:
-                size_hint: 0.5,0.36
+                size_hint: 0.5, 0.36
                 font_size: 11
                 text: "4x4"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
             CustomCheckBox:
                 group: 'druga'
                 active: False
             AboutLable2:
-                size_hint: 0.5,0.36
+                size_hint: 0.5, 0.36
                 font_size: 11
                 text: "8x8"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
             CustomCheckBox:
                 group: 'druga'
                 active: False
         AboutLable:
-            size_hint: 0.1,0.08
-            color: 0,0,0,1
+            size_hint: 0.1, 0.08
+            color: 0, 0, 0, 1
             text: "Puzzle type"
             font_size: 12
         GridLayout:
             cols: 2
             rows: 2
             size: root.size
-            size_hint: 0.5,0.3
-            padding: [10,10,10,10]
-            color: 0,0,0,1
+            size_hint: 0.5, 0.3
+            padding: [10, 10, 10, 10]
+            color: 0, 0, 0, 1
             spacing: 5
             AboutLable2:
-                size_hint: 0.5,0.36
+                size_hint: 0.5, 0.36
                 font_size: 11
                 text: "Numbers"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
             CustomCheckBox:
                 group: 'tretja'
                 active: False
             AboutLable2:
-                size_hint: 0.5,0.36
+                size_hint: 0.5, 0.36
                 font_size: 11
                 text: "Pictures"
-                color: 0,0,0,1
+                color: 0, 0, 0, 1
             CustomCheckBox:
                 group: 'tretja'
                 active: False
         GridLayout:
             cols: 1
             size: root.size
-            size_hint: 0.5,0.3
-            padding: [10,10,10,10]
-            color: 0,0,0,1
+            size_hint: 0.5, 0.3
+            padding: [10, 10, 10, 10]
+            color: 0, 0, 0, 1
             EditedButton2:
-                on_press: self.back_color=(0,0,0,1)
+                on_press: self.back_color = (0, 0, 0, 1)
                 on_release:
                     app.root.current = "startscC"
                     app.root.transition.direction = 'left'
-                    self.back_color=(0.2,0.9,0.9,1)
+                    self.back_color = (0.2, 0.9, 0.9, 1)
                 text: "Ready"
                 bold: True
                 font_size: 25
-                color: 0.2,0.9,0.9,1
+                color: 0.2, 0.9, 0.9, 1
     AnchorLayout:
         size: root.size
-        padding: [50,10,50,0]
+        padding: [50, 10, 50, 0]
         anchor_y: "bottom"
         anchor_x: "center"
         EditedButton:
-            size_hint: .5,.06
+            size_hint: .5, .06
             text: "Back"
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "mainlogin"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
 
 <Puzzless1@Widget>
     GridLayout:
         size: root.size
-        padding: [2,15,2,50]
+        padding: [2, 15, 2, 50]
         cols: 1
         canvas.before:
             RoundedRectangle:
-                pos: 10,30
-                size: self.width-20,self.height-40
+                pos: 10, 30
+                size: self.width - 20, self.height - 40
                 source: "C:/Users/Maj/Desktop/images1.jpg"
-                radius: [10,]
+                radius: [10]
         GridLayout:
             id: puzzG
-            spacing: 1,12
-            padding: [18,15,18,0]
+            spacing: 1, 12
+            padding: [18, 15, 18, 0]
             size: root.size
             cols: 4
             rows: 4
@@ -778,36 +778,36 @@ WindowMan:
             EditedPuzzle2:
 
         GridLayout:
-            padding: 30,35,30,0
-            size_hint: 0.2,0.3
+            padding: 30, 35, 30, 0
+            size_hint: 0.2, 0.3
             cols: 2
             AboutLableScore:
                 id: scores
-                size_hint: 0.1,0.4
+                size_hint: 0.1, 0.4
                 text: 'Score:'
             AboutLableScore:
-                size_hint: 0.1,0.4
+                size_hint: 0.1, 0.4
                 text: ''
 #            on_release:
 #                app.root.current = "main"
 #                app.root.transition.direction = 'right'
-#                self.back_color=(0.2,0.9,0.9,1)
+#                self.back_color = (0.2, 0.9, 0.9, 1)
     AnchorLayout:
         id: resign
         size: root.width, root.height
         anchor_x: 'left'
         anchor_y: 'bottom'
         EditedButton:
-            size_hint: .3,.07
+            size_hint: .3, .07
             text: "Resign"
             font_size: 12
             bold: True
             on_press:
-                self.back_color=(0,0,0,1)
+                self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "main"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 
     AnchorLayout:
         id: finish
@@ -815,159 +815,101 @@ WindowMan:
         anchor_x: 'right'
         anchor_y: 'bottom'
         EditedButton:
-            size_hint: .3,.07
+            size_hint: .3, .07
             text: "Finished"
             font_size: 12
             bold: True
             on_press:
-                self.back_color=(0,0,0,1)
+                self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "main"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
 <Puzzless2@Widget>
     GridLayout:
         size: root.size
-        padding: [2,2,2,20]
+        padding: [2, 2, 2, 20]
         cols: 1
         canvas.before:
             RoundedRectangle:
-                pos: 10,30
-                size: self.width-20,self.height-40
+                pos: 10, 30
+                size: self.width - 20, self.height - 40
                 source: "C:/Users/Maj/Desktop/images1.jpg"
-                radius: [10,]
+                radius: [10]
         GridLayout:
             spacing: 1
-            padding: [25,25,25,0]
+            padding: [25, 25, 25, 0]
             size: root.size
             cols: 5
             rows: 6
+
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
             EditedPuzzle2:
-                on_press: self.back_color = (0.7,0.5,0.5,1)
-                on_release: self.back_color = (1,1,1,1)
+
         GridLayout:
-            padding: 30,10,30,30
+            padding: 30, 10, 30, 30
             spacing: 1
-            size_hint: 0.2,0.3
+            size_hint: 0.2, 0.3
             cols: 1
             AboutLableScore:
-                size_hint: 0.1,0.1
+                size_hint: 0.1, 0.1
                 text: 'Score 1'
     AnchorLayout:
         size: root.width, root.height
         anchor_x: 'left'
         anchor_y: 'bottom'
         EditedButton:
-            size_hint: .3,.07
+            size_hint: .3, .07
             text: "Resign"
             font_size: 12
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
             on_release:
                 app.root.current = "mainlogin"
                 app.root.transition.direction = 'right'
-                self.back_color=(0.2,0.9,0.9,1)
+                self.back_color = (0.2, 0.9, 0.9, 1)
     AnchorLayout:
         size: root.width, root.height
         anchor_x: 'right'
         anchor_y: 'bottom'
         EditedButton:
-            size_hint: .3,.07
+            size_hint: .3, .07
             text: "Finished"
             font_size: 12
             bold: True
-            on_press: self.back_color=(0,0,0,1)
+            on_press: self.back_color = (0, 0, 0, 1)
 
 
 <LogInBLable@Label>
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -981,9 +923,9 @@ WindowMan:
 
 
 <EditedLogInButton1@Button>
-    background_color: (0,0,0,0)
+    background_color: (0, 0, 0, 0)
     background_normal: ''
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -992,9 +934,9 @@ WindowMan:
             rgba: self.back_color
 
 <EditedButton1@Button>
-    background_color: (0,0,0,0)
+    background_color: (0, 0, 0, 0)
     background_normal: ''
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1002,13 +944,13 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            rounded_rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1], self.border_radius)
             width: 1.7
 
 <EditedButton2@Button>
-    background_color: (0,0,0,0)
+    background_color: (0, 0, 0, 0)
     background_normal: ''
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1016,7 +958,7 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            rounded_rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1], self.border_radius)
             width: 1.7
 
 <EditedPuzzle2@Button>
@@ -1041,9 +983,9 @@ WindowMan:
 
 
 <EditedButton@Button>
-    background_color: (0,0,0,0)
+    background_color: (0, 0, 0, 0)
     background_normal: ''
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: [18]
     canvas.before:
         Color:
@@ -1053,7 +995,7 @@ WindowMan:
             pos: self.pos
 
 <AboutLable@Label>
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1066,7 +1008,7 @@ WindowMan:
 
 
 <AboutLable1@Label>
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1074,11 +1016,11 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1])
+            rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1])
             width: 1
 
 <AboutLableScore@Label>
-    back_color: (1,0.1,0.2,1)
+    back_color: (1, 0.1, 0.2, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1086,11 +1028,11 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1])
+            rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1])
             width: 1.7
 
 <AboutLableUsername@Label>
-    back_color: (1,0.1,0.2,1)
+    back_color: (1, 0.1, 0.2, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1098,14 +1040,14 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1])
+            rectangle: (self.pos[0], self.pos[1], self.size[0], self.size[1])
             width: 1.7
 
 
 
 
 <AboutLable@Label>
-    back_color: (0.2,0.9,0.9,1)
+    back_color: (0.2, 0.9, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1117,7 +1059,7 @@ WindowMan:
             pos: self.pos
 
 <AboutLable2@Label>
-    back_color: (0.2,0.75,0.9,1)
+    back_color: (0.2, 0.75, 0.9, 1)
     border_radius: 18
     color: self.back_color
     bold: True
@@ -1130,7 +1072,7 @@ WindowMan:
 
 
 <CustomCheckBox@CheckBox>
-    color: 0,0,0,1
+    color: 0, 0, 0, 1
     bold: True
 
 <IncrediblyCrudeClock>
