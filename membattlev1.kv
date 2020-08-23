@@ -99,7 +99,7 @@ WindowMan:
     AnchorLayout:
         size: root.width,root.height
         anchor_y: "top"
-        anchor_x:"left"
+        anchor_x: "left"
         EditedButton:
             size_hint: .3, .06
             text: "Sign Up"
@@ -159,8 +159,8 @@ WindowMan:
                 color: 0,0,0,1
             GridLayout:
                 spacing: 3
-                cols:2
-                rows:4
+                cols: 2
+                rows: 4
                 LogInBLable:
                     font_size: 12
                     text: "Username:"
@@ -170,7 +170,7 @@ WindowMan:
                     id: user_2
                     padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
                     font_size: 14
-                    multiline:False
+                    multiline: False
                 LogInBLable:
                     font_size: 12
                     text: "Password:"
@@ -180,7 +180,7 @@ WindowMan:
                     id: pass_2
                     padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
                     font_size: 14
-                    multiline:False
+                    multiline: False
             EditedButton1:
                 font_size: 30
                 size_hint: 0.9,0.9
@@ -215,7 +215,7 @@ WindowMan:
         anchor_x: "left"
         EditedButton:
             size_hint: .65,.22
-            text:"Back"
+            text: "Back"
             bold: True
             on_press: self.back_color=(0,0,0,1)
             on_release:
@@ -227,12 +227,12 @@ WindowMan:
     AnchorLayout:
         size: root.width,root.height
         anchor_y: "top"
-        anchor_x:"center"
+        anchor_x: "center"
         Label:
             id: logedin
             size_hint: .3, .06
             bold: True
-            color:(0.2,0.2,1,1)
+            color: (0.2,0.2,1,1)
             font_size: 14
     GridLayout:
         size: root.width-80,root.height-120
@@ -268,7 +268,7 @@ WindowMan:
     AnchorLayout:
         size: root.width,root.height
         anchor_y: "bottom"
-        anchor_x:"center"
+        anchor_x: "center"
         EditedButton:
             size_hint: .3, .06
             text: "Log out"
@@ -297,8 +297,8 @@ WindowMan:
                 color: 0,0,0,1
             GridLayout:
                 spacing: 3
-                cols:2
-                rows:2
+                cols: 2
+                rows: 2
                 LogInBLable:
                     font_size: 12
                     text: "Username:"
@@ -308,7 +308,7 @@ WindowMan:
                     id: user_1
                     padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
                     font_size: 14
-                    multiline:False
+                    multiline: False
                 LogInBLable:
                     font_size: 12
                     text: "Password:"
@@ -318,7 +318,7 @@ WindowMan:
                     id: pass_1
                     padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
                     font_size: 14
-                    multiline:False
+                    multiline: False
                     password: True
             EditedButton1:
                 font_size: 30
@@ -366,7 +366,7 @@ WindowMan:
         anchor_x: "left"
         EditedButton:
             size_hint: .65,.22
-            text:"Back"
+            text: "Back"
             bold: True
             on_press: self.back_color=(0,0,0,1)
             on_release:
@@ -415,7 +415,7 @@ WindowMan:
         anchor_x: "center"
         EditedButton:
             size_hint: .5,.07
-            text:"Back"
+            text: "Back"
             bold: True
             on_press: self.back_color=(0,0,0,1)
             on_release:
@@ -464,7 +464,7 @@ WindowMan:
         anchor_x: "center"
         EditedButton:
             size_hint: .5,.07
-            text:"Back"
+            text: "Back"
             bold: True
             on_press: self.back_color=(0,0,0,1)
             on_release:
@@ -480,7 +480,7 @@ WindowMan:
         anchor_y: "center"
         anchor_x: "center"
 #        GridLayout:
-#            cols:1
+#            cols: 1
 #            size: root.width,root.height
 #            AboutLable1:
 #                size_hint: 1,0.5
@@ -513,7 +513,7 @@ WindowMan:
                 id: email_2
                 padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
                 font_size: 14
-                multiline:False
+                multiline: False
             LogInBLable:
                 font_size: 12
                 text: "New password:"
@@ -524,7 +524,7 @@ WindowMan:
                 spacing: 5
                 padding_y: [self.height / 2.0 - (self.line_height / 2.0) * len(self._lines), 0]
                 font_size: 14
-                multiline:False
+                multiline: False
                 password: True
             EditedButton1:
                 size_hint: 1,1.5
@@ -574,7 +574,7 @@ WindowMan:
         anchor_x: "center"
         EditedButton:
             size_hint: .5,.07
-            text:"Back"
+            text: "Back"
             bold: True
             on_press: self.back_color=(0,0,0,1)
             on_release:
@@ -598,7 +598,7 @@ WindowMan:
 
 
     GridLayout:
-        cols:1
+        cols: 1
         width: root.width
         height: root.height
         AnchorLayout:
@@ -611,7 +611,7 @@ WindowMan:
                 font_size: 12
     GridLayout:
         size: root.width,root.height-40
-        cols:1
+        cols: 1
         padding: [5,5,5,40]
         AboutLable:
             size_hint: 0.1,0.08
@@ -732,7 +732,7 @@ WindowMan:
         anchor_x: "center"
         EditedButton:
             size_hint: .5,.06
-            text:"Back"
+            text: "Back"
             bold: True
             on_press: self.back_color=(0,0,0,1)
             on_release:
@@ -745,7 +745,7 @@ WindowMan:
     GridLayout:
         size: root.size
         padding: [2,15,2,50]
-        cols:1
+        cols: 1
         canvas.before:
             RoundedRectangle:
                 pos: 10,30
@@ -862,8 +862,8 @@ WindowMan:
                     self.back_color = (1,1,1,1)
         GridLayout:
             padding: 30,35,30,0
-            size_hint:0.2,0.3
-            cols:2
+            size_hint: 0.2,0.3
+            cols: 2
             AboutLableScore:
                 id: scores
                 size_hint: 0.1,0.4
@@ -882,7 +882,7 @@ WindowMan:
         anchor_y: 'bottom'
         EditedButton:
             size_hint: .3,.07
-            text:"Resign"
+            text: "Resign"
             font_size: 12
             bold: True
             on_press:
@@ -899,7 +899,7 @@ WindowMan:
         anchor_y: 'bottom'
         EditedButton:
             size_hint: .3,.07
-            text:"Finished"
+            text: "Finished"
             font_size: 12
             bold: True
             on_press:
@@ -912,7 +912,7 @@ WindowMan:
     GridLayout:
         size: root.size
         padding: [2,2,2,20]
-        cols:1
+        cols: 1
         canvas.before:
             RoundedRectangle:
                 pos: 10,30
@@ -1018,8 +1018,8 @@ WindowMan:
         GridLayout:
             padding: 30,10,30,30
             spacing: 1
-            size_hint:0.2,0.3
-            cols:1
+            size_hint: 0.2,0.3
+            cols: 1
             AboutLableScore:
                 size_hint: 0.1,0.1
                 text: 'Score 1'
@@ -1029,7 +1029,7 @@ WindowMan:
         anchor_y: 'bottom'
         EditedButton:
             size_hint: .3,.07
-            text:"Resign"
+            text: "Resign"
             font_size: 12
             bold: True
             on_press: self.back_color=(0,0,0,1)
@@ -1043,7 +1043,7 @@ WindowMan:
         anchor_y: 'bottom'
         EditedButton:
             size_hint: .3,.07
-            text:"Finished"
+            text: "Finished"
             font_size: 12
             bold: True
             on_press: self.back_color=(0,0,0,1)
@@ -1085,7 +1085,7 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rounded_rectangle:(self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
             width: 1.7
 
 <EditedButton2@Button>
@@ -1099,11 +1099,11 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rounded_rectangle:(self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
             width: 1.7
 
 <EditedPuzzle2@Button>
-    a: "C:/Users/Maj/Desktop/markF.jpg"
+    image: "C:/Users/Maj/Desktop/markF.jpg"
     background_color: (0,0,0,0)
     background_normal: ''
     back_color: (1,1,1,1)
@@ -1115,7 +1115,7 @@ WindowMan:
         RoundedRectangle:
             pos: self.pos
             size: self.size
-            source: self.a
+            source: self.image
             radius: [14,]
 
 
@@ -1153,7 +1153,7 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rectangle:(self.pos[0],self.pos[1],self.size[0],self.size[1])
+            rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1])
             width: 1
 
 <AboutLableScore@Label>
@@ -1165,7 +1165,7 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rectangle:(self.pos[0],self.pos[1],self.size[0],self.size[1])
+            rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1])
             width: 1.7
 
 <AboutLableUsername@Label>
@@ -1177,7 +1177,7 @@ WindowMan:
         Color:
             rgba: self.back_color
         Line:
-            rectangle:(self.pos[0],self.pos[1],self.size[0],self.size[1])
+            rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1])
             width: 1.7
 
 
@@ -1219,40 +1219,40 @@ WindowMan:
     Label:
         text: "Email has been sent"
         size_hint: 0.6, 0.2
-        pos_hint: {"x":0.2, "top": 0.5}
+        pos_hint: {"x": 0.2, "top": 0.5}
 
 <Pop1>:
     Label:
         text: "This username is already taken.\nChose a different username."
         size_hint: 0.6, 0.2
-        pos_hint: {"x":0.2, "top": 0.5}
+        pos_hint: {"x": 0.2, "top": 0.5}
 
 <Pop2>:
     Label:
         text: "Username does not exist"
         size_hint: 0.6, 0.2
-        pos_hint: {"x":0.2, "top": 0.5}
+        pos_hint: {"x": 0.2, "top": 0.5}
 
 <Pop3>:
     Label:
         text: "             Incorrect password\nTry again or click forget password"
         size_hint: 0.6, 0.2
-        pos_hint: {"x":0.2, "top": 0.5}
+        pos_hint: {"x": 0.2, "top": 0.5}
 
 <Pop4>:
     Label:
         text: "You are logged in"
         size_hint: 0.6, 0.2
-        pos_hint: {"x":0.2, "top": 0.5}
+        pos_hint: {"x": 0.2, "top": 0.5}
 
 <Pop5>:
     Label:
         text: "You need to be logged in\n     to use this feature"
         size_hint: 0.6, 0.2
-        pos_hint: {"x":0.2, "top": 0.5}
+        pos_hint: {"x": 0.2, "top": 0.5}
 
 <Pop6>:
     Label:
         text: "You need to be logged in\n     to use this feature"
         size_hint: 0.6, 0.2
-        pos_hint: {"x":0.2, "top": 0.5}
+        pos_hint: {"x": 0.2, "top": 0.5}

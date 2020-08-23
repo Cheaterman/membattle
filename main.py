@@ -10,7 +10,8 @@ from kivy.animation import Animation
 from kivy.uix.floatlayout import FloatLayout
 from kivy.logger import Logger
 
-from MBlogicVrsta import pictures_matrix4
+from animals import get_random_animal_pairs
+
 
 try:
     import mysql.connector
@@ -323,29 +324,28 @@ class IncrediblyCrudeClock(Label):
 
 class PuzzleWindow(Screen):
     def on_enter(self):
-        ran_list4str = pictures_matrix4()[0]
-        ran_list4 = pictures_matrix4()[1]
+        pictures = get_random_animal_pairs(4*4)
 
-        for i in range(len(self.ids.puzz.ids.puzzG.children[:])):
-            self.ids.puzz.ids.puzzG.children[i].trigger_action(2)
-            self.ids.puzz.ids.puzzG.children[i].a = ran_list4[i]
-            self.ids.puzz.ids.puzzG.children[i].text = ran_list4str[i]
-            self.ids.puzz.ids.puzzG.children[i].color = (1, 0, 0, 0)
-            self.ids.puzz.ids.puzzG.children[i].bind(
-                on_press=lambda x: self.newspress()
-            )
+        for index, (edited_puzzle_2, image) in enumerate(zip(
+            self.ids.puzz.ids.puzzG.children,
+            pictures,
+        )):
+            edited_puzzle_2.trigger_action(2)
+            edited_puzzle_2.image = str(image)
+            edited_puzzle_2.text = str(index)  # ???
+            edited_puzzle_2.color = (1, 0, 0, 1)
+            edited_puzzle_2.bind(on_press=self.on_press)
 
     def on_leave(self):
-        for i in range(len(self.ids.puzz.ids.puzzG.children[:])):
-            self.ids.puzz.ids.puzzG.children[i].trigger_action()
+        for edited_puzzle_2 in self.ids.puzz.ids.puzzG.children:
+            edited_puzzle_2.trigger_action()
 
         self.ids.puzz.ids.resign.children[0].trigger_action()
         self.ids.puzz.ids.finish.children[0].trigger_action()
 
-    def newspress(self, *args):
-        self.a = "C:/Users/Maj/Desktop/images1.jpg"
-        self.back_color = (1, 0, 1, 1)
-        print('got you')
+    def on_press(self, button):
+        button.image = 'data/images/card.jpg'
+        button.back_color = (1, 0, 1, 1)
 
 
 class PuzzleWindowComp(Screen):
